@@ -1,45 +1,34 @@
 /* assets/css/style.css */
-/* Apply Poppins and dark headings */
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Poppins', sans-serif;
-  color: #1f2937; /* dark slate */
-}
 
-/* Navbar active link */
-.nav-link.active {
-  color: #16a34a !important; /* green */
-  font-weight: 600;
-}
-
-/* Mobile menu styles */
-#mobile-menu a {
-  border-top: 1px solid #e5e7eb;
-}
-/* assets/css/style.css */
-
-/* 1. Theme Variables */
+/* 1. Theme & Layout Variables */
 :root {
-  --color-primary: #28a745;
+  /* Colors */
+  --color-primary:       #28a745;
   --color-primary-hover: #218838;
-  --color-secondary: #0d6efd;
-  --color-light-bg: #f8f9fa;
-  --color-dark-bg: #212529;
-  --color-text-light: #f1f1f1;
-  --color-text-dark: #212529;
-  --font-base: 'Poppins', sans-serif;
-  --radius: 0.75rem;
-  --transition: 0.3s ease;
+  --color-secondary:     #0d6efd;
+  --color-bg-light:      #f8f9fa;
+  --color-bg-dark:       #212529;
+  --color-text-light:    #f8f9fa;
+  --color-text-dark:     #212529;
+
+  /* Typography */
+  --font-base:   'Poppins', sans-serif;
+  --font-heading:'Poppins', sans-serif;
+
+  /* Radii & Transitions */
+  --radius:      0.75rem;
+  --ease:        0.3s ease;
 }
 
 /* Dark-mode overrides */
 .dark {
-  --color-light-bg: #212529;
-  --color-dark-bg: #f8f9fa;
-  --color-text-light: #f8f9fa;
+  --color-bg-light:  #212529;
+  --color-bg-dark:   #f8f9fa;
+  --color-text-light:#f8f9fa;
   --color-text-dark: #212529;
 }
 
-/* 2. Global Resets */
+/* 2. Global Resets & Base Styles */
 *,
 *::before,
 *::after {
@@ -51,18 +40,19 @@ html {
 }
 body {
   margin: 0;
-  background: var(--color-light-bg);
+  background: var(--color-bg-light);
   color: var(--color-text-dark);
   line-height: 1.6;
-  transition: background var(--transition), color var(--transition);
+  transition: background var(--ease), color var(--ease);
 }
 a {
   color: var(--color-primary);
-  transition: color var(--transition);
+  transition: color var(--ease);
 }
-a:hover {
+a:hover,
+.nav-link:hover {
   color: var(--color-primary-hover);
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /* 3. Container Utility */
@@ -74,22 +64,56 @@ a:hover {
 
 /* 4. Headings */
 h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
   color: var(--color-text-dark);
-  margin: 0 0 1rem;
+  margin-bottom: 1rem;
   font-weight: 600;
   line-height: 1.2;
-  transition: color var(--transition);
+  transition: color var(--ease);
 }
 
-/* 5. Buttons */
-.btn {
+/* 5. Navbar */
+#navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: saturate(180%) blur(10px);
+  transition: background var(--ease);
+  z-index: 999;
+}
+.dark #navbar {
+  background: rgba(33,37,41,0.9);
+}
+.nav-link {
   display: inline-block;
-  padding: 0.75rem 1.5rem;
-  border: none;
+  padding: 0.5rem 0;
+  transition: color var(--ease), border-color var(--ease);
+}
+.nav-link.active {
+  color: var(--color-primary) !important;
+  font-weight: 600;
+  border-bottom: 2px solid var(--color-primary);
+}
+
+/* Mobile menu */
+#mobile-menu {
+  display: none;
+}
+@media (max-width: 991px) {
+  #mobile-menu a {
+    display: block;
+    padding: 0.75rem 1rem;
+    border-top: 1px solid #e5e7eb;
+  }
+  #mobile-menu.show {
+    display: block;
+  }
+}
+
+/* 6. Buttons */
+.btn {
   border-radius: var(--radius);
-  font-weight: 500;
-  cursor: pointer;
-  transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+  transition: transform var(--ease), box-shadow var(--ease), background var(--ease);
 }
 .btn-success {
   background: var(--color-primary);
@@ -100,14 +124,22 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(-2px);
   box-shadow: 0 8px 15px rgba(0,0,0,0.1);
 }
+.btn-outline-success {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+.btn-outline-success:hover {
+  background: var(--color-primary);
+  color: #fff;
+}
 
-/* 6. Cards */
+/* 7. Cards */
 .card {
   background: #fff;
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  transition: transform var(--transition), box-shadow var(--transition);
+  transition: transform var(--ease), box-shadow var(--ease);
 }
 .card:hover {
   transform: translateY(-5px);
@@ -117,11 +149,11 @@ h1, h2, h3, h4, h5, h6 {
   padding: 1.5rem;
 }
 .card-img-top {
-  width: 100%;
-  height: auto;
+  width: 100%; height: auto;
+  object-fit: cover;
 }
 
-/* 7. Hero Section */
+/* 8. Hero Section */
 header {
   position: relative;
   background-size: cover;
@@ -134,75 +166,74 @@ header {
 header h1 {
   font-size: 2.5rem;
   text-shadow: 0 4px 10px rgba(0,0,0,0.6);
+  color: #fff;
 }
 @media (min-width: 768px) {
   header h1 { font-size: 4rem; }
 }
 
-/* 8. Feature Icons */
+/* 9. Feature Icons */
 .feature-icon {
   font-size: 3rem;
   color: var(--color-primary);
-  transition: color var(--transition), transform var(--transition);
+  transition: color var(--ease), transform var(--ease);
 }
 .feature-icon:hover {
   color: var(--color-primary-hover);
   transform: scale(1.1);
 }
 
-/* 9. Counter Blocks */
+/* 10. Counter Blocks */
 .counter {
   font-size: 2.5rem;
   font-weight: 700;
   color: var(--color-primary);
-  transition: color var(--transition);
+  transition: color var(--ease);
 }
 
-/* 10. Accordion Customization */
+/* 11. Accordion */
 .accordion-button {
   border-radius: var(--radius);
-  transition: background var(--transition), color var(--transition);
+  transition: background var(--ease), color var(--ease);
 }
 .accordion-button:not(.collapsed) {
   background: var(--color-primary);
   color: #fff;
 }
 .accordion-body {
-  background: var(--color-light-bg);
+  background: var(--color-bg-light);
 }
 
-/* 11. Modal */
+/* 12. Modals */
 .modal-content {
   border-radius: var(--radius);
 }
 
-/* 12. Back-to-Top */
+/* 13. Back-to-Top Button */
 #backToTop {
   position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  width: 3rem;
-  height: 3rem;
+  bottom: 2rem; right: 2rem;
+  width: 3rem; height: 3rem;
   background: var(--color-primary);
   color: #fff;
-  border: none;
-  border-radius: 50%;
+  border: none; border-radius: 50%;
   display: none;
-  align-items: center;
-  justify-content: center;
+  align-items: center; justify-content: center;
   font-size: 1.25rem;
   cursor: pointer;
-  transition: background var(--transition), transform var(--transition);
+  transition: background var(--ease), transform var(--ease);
+}
+#backToTop.show {
+  display: flex;
 }
 #backToTop:hover {
   background: var(--color-primary-hover);
   transform: translateY(-2px);
 }
-#backToTop.show {
-  display: flex;
-}
 
-/* 13. Utility Classes */
+/* 14. Utilities */
 .text-center { text-align: center; }
 .mt-4       { margin-top: 1rem; }
+
+  
 
