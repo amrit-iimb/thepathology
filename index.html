@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>ThePathology – Modern Diagnostics</title>
 
   <!-- Google Font: Poppins -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"/>
 
-  <!-- Tailwind Play CDN with class-based dark mode -->
+  <!-- Tailwind Play CDN with class‐based dark mode -->
   <script>
     tailwind.config = {
       darkMode: 'class',
@@ -30,34 +30,33 @@
     rel="stylesheet"
   />
 
-  <!-- FontAwesome -->
+  <!-- FontAwesome for icons -->
   <link
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
     rel="stylesheet"
   />
 
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/style.css"/>
 </head>
-
 <body class="font-sans bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100">
 
   <!-- NAVBAR -->
   <nav id="navbar" class="fixed top-0 w-full bg-white/90 dark:bg-gray-800/90 backdrop-blur shadow-sm z-50">
     <div class="container mx-auto flex items-center justify-between py-3">
-      <a href="#" class="text-2xl font-semibold text-gray-900 dark:text-gray-100">ThePathology</a>
+      <a href="#top" class="text-2xl font-semibold text-gray-900 dark:text-gray-100">ThePathology</a>
       <button class="lg:hidden p-2" id="nav-toggle">
         <i class="fa fa-bars text-gray-800 dark:text-gray-200"></i>
       </button>
       <ul id="nav-menu" class="hidden lg:flex space-x-8">
-        <li><a href="#services" class="nav-link text-gray-800 dark:text-gray-200 hover:text-green-600 dark:hover:text-green-400">Tests</a></li>
-        <li><a href="#features" class="nav-link text-gray-800 dark:text-gray-200 hover:text-green-600 dark:hover:text-green-400">Why Us</a></li>
-        <li><a href="#stats" class="nav-link text-gray-800 dark:text-gray-200 hover:text-green-600 dark:hover:text-green-400">Stats</a></li>
-        <li><a href="#testimonials" class="nav-link text-gray-800 dark:text-gray-200 hover:text-green-600 dark:hover:text-green-400">Reviews</a></li>
-        <li><a href="#faq" class="nav-link text-gray-800 dark:text-gray-200 hover:text-green-600 dark:hover:text-green-400">FAQ</a></li>
-        <li><a href="#newsletter" class="nav-link text-gray-800 dark:text-gray-200 hover:text-green-600 dark:hover:text-green-400">Newsletter</a></li>
-        <li><a href="#book" class="nav-link text-gray-800 dark:text-gray-200 hover:text-green-600 dark:hover:text-green-400">Book</a></li>
-        <li><a href="#contact" class="nav-link text-gray-800 dark:text-gray-200 hover:text-green-600 dark:hover:text-green-400">Contact</a></li>
+        <li><a href="#services"    class="nav-link">Tests</a></li>
+        <li><a href="#features"    class="nav-link">Why Us</a></li>
+        <li><a href="#stats"       class="nav-link">Stats</a></li>
+        <li><a href="#testimonials"class="nav-link">Reviews</a></li>
+        <li><a href="#faq"         class="nav-link">FAQ</a></li>
+        <li><a href="#newsletter"  class="nav-link">Newsletter</a></li>
+        <li><a href="#bookModal"   class="nav-link" data-bs-toggle="modal">Book</a></li>
+        <li><a href="#contact"     class="nav-link">Contact</a></li>
         <li>
           <button id="theme-toggle" aria-label="Toggle Dark Mode"
             class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 transition">
@@ -66,30 +65,28 @@
         </li>
       </ul>
     </div>
-    <!-- Mobile Menu -->
     <ul id="mobile-menu" class="lg:hidden bg-white dark:bg-gray-800/90 hidden">
-      <li><a href="#services" class="block px-6 py-2 nav-link">Tests</a></li>
-      <li><a href="#features" class="block px-6 py-2 nav-link">Why Us</a></li>
-      <li><a href="#stats" class="block px-6 py-2 nav-link">Stats</a></li>
-      <li><a href="#testimonials" class="block px-6 py-2 nav-link">Reviews</a></li>
-      <li><a href="#faq" class="block px-6 py-2 nav-link">FAQ</a></li>
-      <li><a href="#newsletter" class="block px-6 py-2 nav-link">Newsletter</a></li>
-      <li><a href="#book" class="block px-6 py-2 nav-link">Book</a></li>
-      <li><a href="#contact" class="block px-6 py-2 nav-link">Contact</a></li>
+      <li><a href="#services"    class="block px-6 py-2 nav-link">Tests</a></li>
+      <li><a href="#features"    class="block px-6 py-2 nav-link">Why Us</a></li>
+      <li><a href="#stats"       class="block px-6 py-2 nav-link">Stats</a></li>
+      <li><a href="#testimonials"class="block px-6 py-2 nav-link">Reviews</a></li>
+      <li><a href="#faq"         class="block px-6 py-2 nav-link">FAQ</a></li>
+      <li><a href="#newsletter"  class="block px-6 py-2 nav-link">Newsletter</a></li>
+      <li><a href="#bookModal"   class="block px-6 py-2 nav-link" data-bs-toggle="modal">Book</a></li>
+      <li><a href="#contact"     class="block px-6 py-2 nav-link">Contact</a></li>
     </ul>
   </nav>
 
-  <div class="pt-20"><!-- Offset for fixed navbar -->
+  <div id="top" class="pt-20"><!-- offset for navbar -->
 
     <!-- HERO -->
-    <header class="relative h-screen bg-cover bg-center" style="background-image:url('assets/images/hero-banner.jpg')">
-      <div class="absolute inset-0 bg-black/50"></div>
-      <div class="container h-full flex flex-col justify-center text-white relative z-10 px-4 md:px-0">
-        <h1 class="text-4xl md:text-6xl font-extrabold mb-4">
-          Precision Diagnostics,<br/>
-          Delivered with Care
+    <header class="relative h-screen bg-gradient-to-r from-green-600 to-blue-500 flex items-center justify-center">
+      <div class="text-center px-4">
+        <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-4">
+          Precision Diagnostics,<br/>Delivered with Care
         </h1>
-        <a href="#book" class="btn btn-lg btn-success shadow-lg hover:scale-105 transition-transform">
+        <a href="#bookModal" data-bs-toggle="modal"
+           class="btn btn-lg btn-success shadow-lg hover:scale-105 transition-transform">
           Book a Test
         </a>
       </div>
@@ -100,36 +97,115 @@
       <div class="container">
         <h2 class="text-3xl font-bold text-center text-gray-900 dark:text-gray-100 mb-8">Our Services</h2>
         <div class="row g-4">
-          <!-- Example Card 1 -->
+          <!-- Existing 3 -->
           <div class="col-md-4">
-            <div class="card hover:shadow-lg transition bg-gray-50 dark:bg-gray-900">
-              <img src="assets/images/test1.jpg" class="card-img-top" alt="Complete Blood Count" />
-              <div class="card-body">
+            <div class="card bg-gray-50 dark:bg-gray-900 hover:shadow-lg transition">
+              <div class="card-body text-center">
+                <i class="fa-solid fa-vial fa-2x text-green-600 mb-3"></i>
                 <h5 class="card-title text-gray-900 dark:text-gray-100">Complete Blood Count</h5>
-                <p class="card-text text-gray-700 dark:text-gray-300">₹299 • Results in 12 hrs</p>
-                <button class="btn btn-outline-success w-100" data-bs-toggle="modal" data-bs-target="#bookModal">Book Now</button>
+                <p class="card-text text-gray-700 dark:text-gray-300">₹299 • 12 hrs</p>
+                <a href="#bookModal" data-bs-toggle="modal" class="btn btn-outline-success w-100 mt-3">Book Now</a>
               </div>
             </div>
           </div>
-          <!-- Example Card 2 -->
           <div class="col-md-4">
-            <div class="card hover:shadow-lg transition bg-gray-50 dark:bg-gray-900">
-              <img src="assets/images/test2.jpg" class="card-img-top" alt="Lipid Profile" />
-              <div class="card-body">
+            <div class="card bg-gray-50 dark:bg-gray-900 hover:shadow-lg transition">
+              <div class="card-body text-center">
+                <i class="fa-solid fa-droplet fa-2x text-green-600 mb-3"></i>
                 <h5 class="card-title text-gray-900 dark:text-gray-100">Lipid Profile</h5>
-                <p class="card-text text-gray-700 dark:text-gray-300">₹399 • Results in 24 hrs</p>
-                <button class="btn btn-outline-success w-100" data-bs-toggle="modal" data-bs-target="#bookModal">Book Now</button>
+                <p class="card-text text-gray-700 dark:text-gray-300">₹399 • 24 hrs</p>
+                <a href="#bookModal" data-bs-toggle="modal" class="btn btn-outline-success w-100 mt-3">Book Now</a>
               </div>
             </div>
           </div>
-          <!-- Example Card 3 -->
           <div class="col-md-4">
-            <div class="card hover:shadow-lg transition bg-gray-50 dark:bg-gray-900">
-              <img src="assets/images/test3.jpg" class="card-img-top" alt="Ultrasound Abdomen" />
-              <div class="card-body">
+            <div class="card bg-gray-50 dark:bg-gray-900 hover:shadow-lg transition">
+              <div class="card-body text-center">
+                <i class="fa-solid fa-hospital-user fa-2x text-green-600 mb-3"></i>
                 <h5 class="card-title text-gray-900 dark:text-gray-100">Ultrasound Abdomen</h5>
-                <p class="card-text text-gray-700 dark:text-gray-300">₹899 • Reports in 48 hrs</p>
-                <button class="btn btn-outline-success w-100" data-bs-toggle="modal" data-bs-target="#bookModal">Book Now</button>
+                <p class="card-text text-gray-700 dark:text-gray-300">₹899 • 48 hrs</p>
+                <a href="#bookModal" data-bs-toggle="modal" class="btn btn-outline-success w-100 mt-3">Book Now</a>
+              </div>
+            </div>
+          </div>
+          <!-- 8 New -->
+          <div class="col-md-4">
+            <div class="card bg-gray-50 dark:bg-gray-900 hover:shadow-lg transition">
+              <div class="card-body text-center">
+                <i class="fa-solid fa-file-medical-alt fa-2x text-green-600 mb-3"></i>
+                <h5 class="card-title text-gray-900 dark:text-gray-100">Thyroid Profile</h5>
+                <p class="card-text text-gray-700 dark:text-gray-300">₹499 • 24 hrs</p>
+                <a href="#bookModal" data-bs-toggle="modal" class="btn btn-outline-success w-100 mt-3">Book Now</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card bg-gray-50 dark:bg-gray-900 hover:shadow-lg transition">
+              <div class="card-body text-center">
+                <i class="fa-solid fa-kidney fa-2x text-green-600 mb-3"></i>
+                <h5 class="card-title text-gray-900 dark:text-gray-100">Kidney Function Test</h5>
+                <p class="card-text text-gray-700 dark:text-gray-300">₹599 • 24 hrs</p>
+                <a href="#bookModal" data-bs-toggle="modal" class="btn btn-outline-success w-100 mt-3">Book Now</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card bg-gray-50 dark:bg-gray-900 hover:shadow-lg transition">
+              <div class="card-body text-center">
+                <i class="fa-solid fa-lungs fa-2x text-green-600 mb-3"></i>
+                <h5 class="card-title text-gray-900 dark:text-gray-100">Liver Function Test</h5>
+                <p class="card-text text-gray-700 dark:text-gray-300">₹549 • 24 hrs</p>
+                <a href="#bookModal" data-bs-toggle="modal" class="btn btn-outline-success w-100 mt-3">Book Now</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card bg-gray-50 dark:bg-gray-900 hover:shadow-lg transition">
+              <div class="card-body text-center">
+                <i class="fa-solid fa-syringe fa-2x text-green-600 mb-3"></i>
+                <h5 class="card-title text-gray-900 dark:text-gray-100">Diabetes Screening</h5>
+                <p class="card-text text-gray-700 dark:text-gray-300">₹699 • 12 hrs</p>
+                <a href="#bookModal" data-bs-toggle="modal" class="btn btn-outline-success w-100 mt-3">Book Now</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card bg-gray-50 dark:bg-gray-900 hover:shadow-lg transition">
+              <div class="card-body text-center">
+                <i class="fa-solid fa-sun fa-2x text-green-600 mb-3"></i>
+                <h5 class="card-title text-gray-900 dark:text-gray-100">Vitamin D Test</h5>
+                <p class="card-text text-gray-700 dark:text-gray-300">₹299 • 24 hrs</p>
+                <a href="#bookModal" data-bs-toggle="modal" class="btn btn-outline-success w-100 mt-3">Book Now</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card bg-gray-50 dark:bg-gray-900 hover:shadow-lg transition">
+              <div class="card-body text-center">
+                <i class="fa-solid fa-magnet fa-2x text-green-600 mb-3"></i>
+                <h5 class="card-title text-gray-900 dark:text-gray-100">Iron Studies</h5>
+                <p class="card-text text-gray-700 dark:text-gray-300">₹349 • 24 hrs</p>
+                <a href="#bookModal" data-bs-toggle="modal" class="btn btn-outline-success w-100 mt-3">Book Now</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card bg-gray-50 dark:bg-gray-900 hover:shadow-lg transition">
+              <div class="card-body text-center">
+                <i class="fa-solid fa-stethoscope fa-2x text-green-600 mb-3"></i>
+                <h5 class="card-title text-gray-900 dark:text-gray-100">Full Body Checkup</h5>
+                <p class="card-text text-gray-700 dark:text-gray-300">₹1,999 • 48 hrs</p>
+                <a href="#bookModal" data-bs-toggle="modal" class="btn btn-outline-success w-100 mt-3">Book Now</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card bg-gray-50 dark:bg-gray-900 hover:shadow-lg transition">
+              <div class="card-body text-center">
+                <i class="fa-solid fa-thermometer fa-2x text-green-600 mb-3"></i>
+                <h5 class="card-title text-gray-900 dark:text-gray-100">Fever Comprehensive Pack</h5>
+                <p class="card-text text-gray-700 dark:text-gray-300">₹799 • 24 hrs</p>
+                <a href="#bookModal" data-bs-toggle="modal" class="btn btn-outline-success w-100 mt-3">Book Now</a>
               </div>
             </div>
           </div>
@@ -137,30 +213,38 @@
       </div>
     </section>
 
+  </div><!-- /#top -->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
+
+
     <!-- WHY CHOOSE US -->
     <section id="features" class="py-16 bg-gray-100 dark:bg-gray-900">
       <div class="container">
-        <h2 class="text-3xl font-bold text-center mb-8">Why Choose Us</h2>
+        <h2 class="text-3xl font-bold text-center text-gray-900 dark:text-gray-100 mb-8">Why Choose Us</h2>
         <div class="row g-4 text-center">
           <div class="col-md-3">
             <i class="fa-solid fa-vial feature-icon mb-3"></i>
             <h5>Accurate Results</h5>
-            <p class="text-gray-600 dark:text-gray-300">State-of-the-art labs & certified technicians.</p>
+            <p class="text-gray-600 dark:text-gray-300">State-of-the-art labs & certified techs.</p>
           </div>
           <div class="col-md-3">
             <i class="fa-solid fa-stopwatch feature-icon mb-3"></i>
             <h5>Fast Turnaround</h5>
-            <p class="text-gray-600 dark:text-gray-300">Major tests in 12–24 hours, emergency slots available.</p>
+            <p class="text-gray-600 dark:text-gray-300">12–24 hrs, emergency slots available.</p>
           </div>
           <div class="col-md-3">
             <i class="fa-solid fa-headset feature-icon mb-3"></i>
             <h5>24/7 Support</h5>
-            <p class="text-gray-600 dark:text-gray-300">Live chat & phone support whenever you need.</p>
+            <p class="text-gray-600 dark:text-gray-300">Live chat & phone support anytime.</p>
           </div>
           <div class="col-md-3">
             <i class="fa-solid fa-wallet feature-icon mb-3"></i>
             <h5>Affordable Pricing</h5>
-            <p class="text-gray-600 dark:text-gray-300">Transparent costs with no hidden fees.</p>
+            <p class="text-gray-600 dark:text-gray-300">Transparent costs, no hidden fees.</p>
           </div>
         </div>
       </div>
@@ -172,19 +256,19 @@
         <div class="row text-center">
           <div class="col-md-3">
             <div class="counter">50K+</div>
-            <p>Tests Completed</p>
+            <p class="text-gray-800 dark:text-gray-300">Tests Completed</p>
           </div>
           <div class="col-md-3">
             <div class="counter">10K+</div>
-            <p>Happy Patients</p>
+            <p class="text-gray-800 dark:text-gray-300">Happy Patients</p>
           </div>
           <div class="col-md-3">
             <div class="counter">99.9%</div>
-            <p>Accuracy Rate</p>
+            <p class="text-gray-800 dark:text-gray-300">Accuracy Rate</p>
           </div>
           <div class="col-md-3">
             <div class="counter">24/7</div>
-            <p>Support</p>
+            <p class="text-gray-800 dark:text-gray-300">Support</p>
           </div>
         </div>
       </div>
@@ -193,19 +277,19 @@
     <!-- TESTIMONIALS -->
     <section id="testimonials" class="py-16 bg-gray-100 dark:bg-gray-900">
       <div class="container">
-        <h2 class="text-3xl font-bold text-center mb-8">What Our Patients Say</h2>
+        <h2 class="text-3xl font-bold text-center text-gray-900 dark:text-gray-100 mb-8">What Our Patients Say</h2>
         <div id="testimonialsCarousel" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner text-center">
             <div class="carousel-item active">
-              <blockquote class="blockquote">“ThePathology’s home collection was seamless and fast. Got results next day!”</blockquote>
+              <blockquote class="blockquote">“Home collection was seamless & fast—next-day results!”</blockquote>
               <footer class="blockquote-footer">– Priya R.</footer>
             </div>
             <div class="carousel-item">
-              <blockquote class="blockquote">“Very professional staff and super accurate tests. Highly recommend.”</blockquote>
+              <blockquote class="blockquote">“Professional staff & super accurate tests—highly recommend.”</blockquote>
               <footer class="blockquote-footer">– Mohan K.</footer>
             </div>
             <div class="carousel-item">
-              <blockquote class="blockquote">“24/7 chat support answered all my queries instantly. Great service!”</blockquote>
+              <blockquote class="blockquote">“24/7 chat support answered instantly—great service!”</blockquote>
               <footer class="blockquote-footer">– Anjali S.</footer>
             </div>
           </div>
@@ -222,7 +306,7 @@
     <!-- FAQ -->
     <section id="faq" class="py-16 bg-white dark:bg-gray-800">
       <div class="container">
-        <h2 class="text-3xl font-bold text-center mb-8">Frequently Asked Questions</h2>
+        <h2 class="text-3xl font-bold text-center text-gray-900 dark:text-gray-100 mb-8">FAQ</h2>
         <div class="accordion" id="faqAccordion">
           <div class="accordion-item bg-gray-50 dark:bg-gray-900">
             <h2 class="accordion-header" id="faqHeading1">
@@ -231,7 +315,7 @@
               </button>
             </h2>
             <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-              <div class="accordion-body">For most blood tests, fasting for 8–12 hours is recommended.</div>
+              <div class="accordion-body">Fasting for 8–12 hours is generally recommended.</div>
             </div>
           </div>
           <div class="accordion-item bg-gray-50 dark:bg-gray-900">
@@ -241,17 +325,17 @@
               </button>
             </h2>
             <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-              <div class="accordion-body">Yes—select “Home Collection” when booking, and our phlebotomist will visit you.</div>
+              <div class="accordion-body">Yes—select “Book” and our phlebotomist will come to you.</div>
             </div>
           </div>
           <div class="accordion-item bg-gray-50 dark:bg-gray-900">
             <h2 class="accordion-header" id="faqHeading3">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
-                When will I receive my report?
+                When will I get my report?
               </button>
             </h2>
             <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-              <div class="accordion-body">Reports are delivered within 24–48 hours via email and SMS.</div>
+              <div class="accordion-body">Reports are emailed within 24–48 hours.</div>
             </div>
           </div>
         </div>
@@ -264,7 +348,7 @@
         <h2 class="text-3xl font-bold mb-4">Stay Informed</h2>
         <p class="mb-6">Subscribe for health tips & special offers.</p>
         <form class="d-flex justify-content-center">
-          <input type="email" class="form-control w-50 me-2" placeholder="Your email address" required/>
+          <input type="email" class="form-control w-50 me-2" placeholder="Your email" required/>
           <button type="submit" class="btn btn-dark">Subscribe</button>
         </form>
       </div>
@@ -279,9 +363,18 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
           </div>
           <div class="modal-body">
-            <div class="mb-3"><label class="form-label">Name</label><input type="text" class="form-control" placeholder="Your name" required/></div>
-            <div class="mb-3"><label class="form-label">Email</label><input type="email" class="form-control" placeholder="you@example.com" required/></div>
-            <div class="mb-3"><label class="form-label">Preferred Date</label><input type="date" class="form-control" required/></div>
+            <div class="mb-3">
+              <label class="form-label">Name</label>
+              <input type="text" class="form-control" placeholder="Your name" required/>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-control" placeholder="you@example.com" required/>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Preferred Date</label>
+              <input type="date" class="form-control" required/>
+            </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
@@ -291,28 +384,33 @@
       </div>
     </div>
 
-    <!-- CONTACT & MAP -->
+    <!-- CONTACT -->
     <section id="contact" class="py-16 bg-white dark:bg-gray-900">
       <div class="container text-center">
-        <h2 class="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-4">Get in Touch</h2>
-        <p class="text-gray-700 dark:text-gray-300 mb-6">Email: info@thepathology.com | Phone: +91-12345-67890</p>
-        <div class="ratio ratio-16x9 mb-6">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!2m12..." style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-4">Contact Us</h2>
+        <p class="text-gray-700 dark:text-gray-300 mb-6">
+          Email: info@thepathology.com<br/>
+          Phone: +91-12345-67890
+        </p>
+        <button class="btn btn-success" onclick="window.location.href='mailto:info@thepathology.com'">
+          Send Us an Email
+        </button>
       </div>
     </section>
 
     <!-- FOOTER -->
     <footer class="bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 py-4">
-      <div class="container text-center"><small>© 2025 ThePathology. All rights reserved.</small></div>
+      <div class="container text-center">
+        <small>© 2025 ThePathology. All rights reserved.</small>
+      </div>
     </footer>
 
     <!-- BACK TO TOP -->
     <button id="backToTop" title="Back to top">↑</button>
 
-  </div> <!-- end offset wrapper -->
+  </div><!-- /#top -->
 
-  <!-- Bootstrap JS -->
+  <!-- Bootstrap JS bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Custom JS -->
   <script src="assets/js/script.js"></script>
