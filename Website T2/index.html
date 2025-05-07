@@ -1,0 +1,388 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ThePathology – Modern Diagnostics</title>
+
+  <!-- Tailwind Play CDN with class-based dark mode -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: {} },
+      plugins: [],
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Bootstrap 5 CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- FontAwesome for icons -->
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100">
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white dark:bg-gray-800 shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-gray-900 dark:text-gray-100" href="#">ThePathology</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navMenu"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item"><a class="nav-link text-gray-800 dark:text-gray-200" href="#services">Tests</a></li>
+          <li class="nav-item"><a class="nav-link text-gray-800 dark:text-gray-200" href="#features">Why Us</a></li>
+          <li class="nav-item"><a class="nav-link text-gray-800 dark:text-gray-200" href="#stats">Stats</a></li>
+          <li class="nav-item"><a class="nav-link text-gray-800 dark:text-gray-200" href="#testimonials">Reviews</a></li>
+          <li class="nav-item"><a class="nav-link text-gray-800 dark:text-gray-200" href="#faq">FAQ</a></li>
+          <li class="nav-item"><a class="nav-link text-gray-800 dark:text-gray-200" href="#newsletter">Newsletter</a></li>
+          <li class="nav-item"><a class="nav-link text-gray-800 dark:text-gray-200" href="#book">Book</a></li>
+          <li class="nav-item"><a class="nav-link text-gray-800 dark:text-gray-200" href="#contact">Contact</a></li>
+          <li class="nav-item">
+            <button id="theme-toggle" aria-label="Toggle Dark Mode"
+              class="ms-3 p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 transition">
+              🌙
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header
+    class="relative h-screen bg-cover bg-center"
+    style="background-image:url('assets/images/hero.jpg')"
+  >
+    <div class="absolute inset-0 bg-black/50"></div>
+    <div class="container h-full flex flex-col justify-center text-white relative z-10 px-4 md:px-0">
+      <h1 class="text-4xl md:text-6xl font-extrabold mb-4">
+        Precision Diagnostics,<br/>
+        Delivered with Care
+      </h1>
+      <a
+        href="#book"
+        class="btn btn-lg btn-success shadow-lg hover:scale-105 transition-transform"
+      >
+        Book a Test
+      </a>
+    </div>
+  </header>
+
+  <!-- SERVICES -->
+  <section id="services" class="py-16 bg-white dark:bg-gray-800">
+    <div class="container">
+      <h2 class="text-3xl font-bold text-center text-gray-900 dark:text-gray-100 mb-8">Our Services</h2>
+      <div class="row g-4">
+        <!-- Card 1 -->
+        <div class="col-md-4">
+          <div class="card hover:shadow-lg transition bg-gray-50 dark:bg-gray-900">
+            <img
+              src="assets/images/test1.jpg"
+              class="card-img-top"
+              alt="Complete Blood Count"
+            />
+            <div class="card-body">
+              <h5 class="card-title text-gray-900 dark:text-gray-100">Complete Blood Count</h5>
+              <p class="card-text text-gray-700 dark:text-gray-300">₹299 • Results in 12 hrs</p>
+              <button class="btn btn-outline-success w-100" data-bs-toggle="modal" data-bs-target="#bookModal">
+                Book Now
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="col-md-4">
+          <div class="card hover:shadow-lg transition bg-gray-50 dark:bg-gray-900">
+            <img
+              src="assets/images/test2.jpg"
+              class="card-img-top"
+              alt="Lipid Profile"
+            />
+            <div class="card-body">
+              <h5 class="card-title text-gray-900 dark:text-gray-100">Lipid Profile</h5>
+              <p class="card-text text-gray-700 dark:text-gray-300">₹399 • Results in 24 hrs</p>
+              <button class="btn btn-outline-success w-100" data-bs-toggle="modal" data-bs-target="#bookModal">
+                Book Now
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="col-md-4">
+          <div class="card hover:shadow-lg transition bg-gray-50 dark:bg-gray-900">
+            <img
+              src="assets/images/test3.jpg"
+              class="card-img-top"
+              alt="Ultrasound Abdomen"
+            />
+            <div class="card-body">
+              <h5 class="card-title text-gray-900 dark:text-gray-100">Ultrasound Abdomen</h5>
+              <p class="card-text text-gray-700 dark:text-gray-300">₹899 • Reports in 48 hrs</p>
+              <button class="btn btn-outline-success w-100" data-bs-toggle="modal" data-bs-target="#bookModal">
+                Book Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section id="features" class="py-16 bg-gray-100 dark:bg-gray-900">
+    <div class="container">
+      <h2 class="text-3xl font-bold text-center mb-8">Why Choose Us</h2>
+      <div class="row g-4 text-center">
+        <div class="col-md-3">
+          <i class="fa-solid fa-vial feature-icon text-green-600 dark:text-green-400 mb-3"></i>
+          <h5 class="mb-2">Accurate Results</h5>
+          <p class="text-gray-600 dark:text-gray-300">State-of-the-art labs & certified technicians.</p>
+        </div>
+        <div class="col-md-3">
+          <i class="fa-solid fa-stopwatch feature-icon text-green-600 dark:text-green-400 mb-3"></i>
+          <h5 class="mb-2">Fast Turnaround</h5>
+          <p class="text-gray-600 dark:text-gray-300">Major tests in 12–24 hours, emergency slots available.</p>
+        </div>
+        <div class="col-md-3">
+          <i class="fa-solid fa-headset feature-icon text-green-600 dark:text-green-400 mb-3"></i>
+          <h5 class="mb-2">24/7 Support</h5>
+          <p class="text-gray-600 dark:text-gray-300">Chat & phone support any time you need.</p>
+        </div>
+        <div class="col-md-3">
+          <i class="fa-solid fa-wallet feature-icon text-green-600 dark:text-green-400 mb-3"></i>
+          <h5 class="mb-2">Affordable Pricing</h5>
+          <p class="text-gray-600 dark:text-gray-300">Transparent costs with no hidden fees.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section id="stats" class="py-16 bg-white dark:bg-gray-800">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-3">
+          <div class="counter text-green-600 dark:text-green-400">50K+</div>
+          <p>Tests Completed</p>
+        </div>
+        <div class="col-md-3">
+          <div class="counter text-green-600 dark:text-green-400">10K+</div>
+          <p>Happy Patients</p>
+        </div>
+        <div class="col-md-3">
+          <div class="counter text-green-600 dark:text-green-400">99.9%</div>
+          <p>Accuracy Rate</p>
+        </div>
+        <div class="col-md-3">
+          <div class="counter text-green-600 dark:text-green-400">24/7</div>
+          <p>Support</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" class="py-16 bg-gray-100 dark:bg-gray-900">
+    <div class="container">
+      <h2 class="text-3xl font-bold text-center mb-8">What Our Patients Say</h2>
+      <div id="testimonialsCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner text-center">
+          <div class="carousel-item active">
+            <blockquote class="blockquote">
+              “ThePathology’s home collection was seamless and fast. Got results next day!”
+            </blockquote>
+            <footer class="blockquote-footer">– Priya R.</footer>
+          </div>
+          <div class="carousel-item">
+            <blockquote class="blockquote">
+              “Very professional staff and super accurate tests. Highly recommend.”
+            </blockquote>
+            <footer class="blockquote-footer">– Mohan K.</footer>
+          </div>
+          <div class="carousel-item">
+            <blockquote class="blockquote">
+              “24/7 chat support answered all my queries instantly. Great service!”
+            </blockquote>
+            <footer class="blockquote-footer">– Anjali S.</footer>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-16 bg-white dark:bg-gray-800">
+    <div class="container">
+      <h2 class="text-3xl font-bold text-center mb-8">Frequently Asked Questions</h2>
+      <div class="accordion" id="faqAccordion">
+        <div class="accordion-item bg-gray-50 dark:bg-gray-900">
+          <h2 class="accordion-header" id="faqHeading1">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+              How do I prepare for a blood test?
+            </button>
+          </h2>
+          <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              For most blood tests, fasting for 8–12 hours is recommended. Your test details will tell you if fasting is required.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item bg-gray-50 dark:bg-gray-900">
+          <h2 class="accordion-header" id="faqHeading2">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+              Can I book a home collection?
+            </button>
+          </h2>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Yes—select “Home Collection” when booking, and our phlebotomist will visit your address.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item bg-gray-50 dark:bg-gray-900">
+          <h2 class="accordion-header" id="faqHeading3">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+              When will I receive my report?
+            </button>
+          </h2>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Standard reports are delivered within 24–48 hours via email and SMS notification.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section id="newsletter" class="py-16 bg-green-600 text-white">
+    <div class="container text-center">
+      <h2 class="text-3xl font-bold mb-4">Stay Informed</h2>
+      <p class="mb-6">Subscribe to our newsletter for health tips & special offers.</p>
+      <form class="d-flex justify-content-center">
+        <input
+          type="email"
+          class="form-control w-50 me-2"
+          placeholder="Your email address"
+          required
+        />
+        <button type="submit" class="btn btn-dark">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- BOOKING FORM (Modal) -->
+  <div
+    class="modal fade"
+    id="bookModal"
+    tabindex="-1"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <form class="modal-content bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100">
+        <div class="modal-header">
+          <h5 class="modal-title">Schedule Your Test</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Your name"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              placeholder="you@example.com"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Preferred Date</label>
+            <input type="date" class="form-control" required />
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Cancel
+          </button>
+          <button type="submit" class="btn btn-success">
+            Confirm
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- CONTACT & MAP -->
+  <section id="contact" class="py-16 bg-white dark:bg-gray-900">
+    <div class="container text-center">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-4">Get in Touch</h2>
+      <p class="text-gray-700 dark:text-gray-300 mb-6">Email: info@thepathology.com | Phone: +91-12345-67890</p>
+      <div class="ratio ratio-16x9 mb-6">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!2m12..."
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 py-4">
+    <div class="container text-center">
+      <small>© 2025 ThePathology. All rights reserved.</small>
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP -->
+  <button id="backToTop" title="Back to top">↑</button>
+
+  <!-- Bootstrap JS bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
+

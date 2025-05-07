@@ -1,0 +1,43 @@
+/* assets/css/style.css */
+/* Rounded cards */
+.card {
+  border-radius: 1rem;
+}
+
+/* Hero text shadow */
+header h1 {
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Feature icons */
+.feature-icon {
+  font-size: 3rem;
+}
+
+/* Counter style */
+.counter {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+/* Back to top button */
+#backToTop {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 3rem;
+  height: 3rem;
+  background: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+  font-size: 1.25rem;
+}
+#backToTop.show {
+  display: flex;
+}
